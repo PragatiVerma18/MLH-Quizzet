@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your quiz will appear here</title>
+</head>
+
+<body>
+    {% if uploaded == true %}
+    <h1>Your file was uploaded successfully</h1>
+    <h1>Your quiz will appear here</h1>
+    <code>Contents of your file</code>
+    <br />
+    <br />
+    {{ pdftext }}
+    {% else %}
+    <h1>Could not upload file</h1>
+    {% endif %}
+</body>
+
+</html>

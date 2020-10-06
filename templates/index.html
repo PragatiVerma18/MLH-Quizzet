@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 
 <body>
-    {% if uploaded == true %}
-    <h1>Your file was uploaded successfully</h1>
-    {% endif %}
-    <form action="http://localhost:5000/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" />
+    <form action="http://localhost:5000/quiz" method="POST" enctype="multipart/form-data">
+        <!-- Accept only pdf/txt files -->
+        <input type="file" name="file" accept=".txt, application/pdf" />
         <input type="submit" name="upload file" />
     </form>
 </body>
