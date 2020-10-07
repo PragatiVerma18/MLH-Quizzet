@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  color: #fff;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: points;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding-top: 80px;
+  overflow-y: hidden;
+}
+
+main {
+  background: #d8d8dc;
+  border-radius: 10px;
+  padding: 5px 20px 50px;
+  width: 95%;
+  max-width: 500px;
+  margin: 0 auto 214px;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.quiz-options {
+  margin: 60px 0;
+}
+
+[type="radio"] {
+  border: 0;
+  height: 0.0625rem;
+  width: 0.0625rem;
+  position: absolute;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 6px 0;
+  position: relative;
+  width: 100%;
+  color: #000;
+}
+
+label:hover .alphabet {
+  background: #000;
+  color: #fff;
+}
+
+label .alphabet {
+  border-radius: 5px;
+  border: solid 1px #000;
+  padding: 0.4rem 0.5rem 0.4rem;
+  width: 2.3rem;
+  margin: 0 1.3rem 0 0.7rem;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+
+label .icon {
+  height: auto;
+  position: absolute;
+  left: 92%;
+  top: 12px;
+}
