@@ -1,3 +1,6 @@
+# Do not upload folder, auto created at each run
+pdf/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
