@@ -1,0 +1,29 @@
+html,
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  border-radius: 10px;
+  margin-top: 40px !important;
+  height: 500px !important;
+  width: 400px;
+}
+
+.card.has-text-centered .card-header,
+.card.has-text-centered .card-content,
+.card.has-text-centered .card-footer {
+  justify-content: center;
+  align-items: center;
+}
+.card.has-text-centered h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.navbar {
+  margin-bottom: 20px !important;
+}
