@@ -1,13 +1,13 @@
 '''This file contains the module for generating
 '''
 import nltk
+import spacy
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
-import spacy
 
 
-class QuestionExtraction:
+class QuestionExtractor:
     ''' This class contains all the methods
     required for extracting questions from
     a given document
@@ -27,7 +27,7 @@ class QuestionExtraction:
 
         self.questions_dict = dict()
 
-    def get_questions(self, document):
+    def get_questions_dict(self, document):
         '''
         Returns a dict of questions in the format:
         question_number: {
@@ -98,7 +98,7 @@ class QuestionExtraction:
         ''' Sets the tf-idf scores for each word'''
         self.unfiltered_sentences = sent_tokenize(document)
         self.filtered_sentences = self.get_filtered_sentences(document)
-        print(self.unfiltered_sentences)
+
         self.word_score = dict()  # (word, score)
 
         # (word, sentence where word score is max)
