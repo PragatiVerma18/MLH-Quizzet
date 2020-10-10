@@ -1,85 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='css/quiz.css') }}"
-    />
-    <title>MLH Quizzet</title>
-  </head>
 
-  <body>
-    <nav
-      class="navbar is-dark is-fixed-top has-text-centered"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-centered" href="#"
-          ><strong class="is-size-3 has-text-centered">Question 1</strong></a
-        >
-        <div class="navbar-burger" data-target="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/quiz.css') }}" />
+  <title>MLH Quizzet</title>
+</head>
+
+<body>
+  <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item has-text-centered" href="#"><strong class="is-size-3 has-text-centered">MLH
+          Quizzet</strong></a>
+      <div class="navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </nav>
-    <a href="{{ url_for('index') }}"> Home </a>
-    {% if uploaded == true %}
-    <section class="section-1" id="section-1">
-      <main>
-        <div class="text-container">
-          <h3 class="has-text-weight-bold has-text-black is-size-3">
-            MLH Quizzet
-          </h3>
-          <p class="has-text-weight-bold has-text-black is-size-4">
-            What does CSS stand for?
-          </p>
+    </div>
+  </nav>
+  <a href="{{ url_for('index') }}"> Home </a>
+  {% if uploaded == true %}
+
+  {% for i in range(size) %}
+  <section class="section-1" id="section-1">
+    <main>
+      <p class="has-text-weight-bold has-text-black is-size-2">Question {{ i+1 }}</p>
+      <div class="text-container">
+        <p class="has-text-weight-bold has-text-black is-size-4">
+          {{ questions[i+1]['question'] }}
+        </p>
+      </div>
+      <form>
+        <div class="quiz-options">
+          {% for j in questions[i+1]['options'] %}
+          <input type="radio" class="input-radio one-a" id="one-a" name="yes-1" required />
+          <label class="radio-label" for="one-a">
+            <span class="alphabet">{{ j+1 }}</span> {{ questions[i+1]['options'][j+1] }}
+            <br />
+            {% endfor %}
         </div>
-        <form>
-          <div class="quiz-options">
-            <input
-              type="radio"
-              class="input-radio one-a"
-              id="one-a"
-              name="yes-1"
-              required
-            />
-            <label class="radio-label" for="one-a">
-              <span class="alphabet">A</span> Cascading Style Sheets
-            </label>
-            <input
-              type="radio"
-              class="input-radio one-b"
-              id="one-b"
-              name="yes-1"
-            />
-            <label class="radio-label" for="one-b">
-              <span class="alphabet">B</span> Creative Screen Styling
-            </label>
-            <input
-              type="radio"
-              class="input-radio one-c"
-              id="one-c"
-              name="yes-1"
-            />
-            <label class="radio-label" for="one-c">
-              <span class="alphabet">C</span> Cascading Style Screen
-            </label>
-          </div>
-        </form>
-      </main>
-    </section>
-    {% else %}
-    <h1>Could not upload file</h1>
-    {% endif %}
-  </body>
+      </form>
+    </main>
+  </section>
+  {% endfor %}
+  {% else %}
+  <h1>Could not upload file</h1>
+  {% endif %}
+</body>
+
 </html>

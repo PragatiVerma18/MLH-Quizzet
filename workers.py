@@ -1,16 +1,19 @@
 from PyPDF2 import PdfFileReader
+from question_generation_main import QuestionGeneration
 
 
 def pdf2text(file_path, file_exten) -> str:
     """ Converts a given file to text content """
 
-    _content = None
+    _content = ''
 
     # Identify file type and get its contents
     if file_exten == 'pdf':
         with open(file_path, 'rb') as pdf_file:
             _pdf_reader = PdfFileReader(pdf_file)
-            _content = _pdf_reader
+            # for p in range(_pdf_reader.numPages):
+            #     _content += _pdf_reader.getPage(p).extractText()
+            _content = _pdf_reader.getPage(0).extractText()
             print('PDF operation done!')
 
     elif file_exten == 'txt':
@@ -19,3 +22,10 @@ def pdf2text(file_path, file_exten) -> str:
             print('TXT operation done!')
 
     return _content
+
+
+def txt2questions(doc, n=1, o=4):
+    """ Get all questions and options """
+
+    qGen = QuestionGeneration(n, o)
+    return qGen.generate_questions_dict(doc)
