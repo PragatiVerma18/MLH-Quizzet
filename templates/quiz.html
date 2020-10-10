@@ -1,54 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/quiz.css') }}" />
-  <title>MLH Quizzet</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/quiz.css') }}" />
+        <title>MLH Quizzet</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type='text/javascript'></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('label').click(function () {
+                            $('label').removeClass('worngans');
+                            $(this).addClass('worngans');
+                        });
+                    });
+                </script>
+    </head>
 
-<body>
-  <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item has-text-centered" href="#"><strong class="is-size-3 has-text-centered">MLH
-          Quizzet</strong></a>
-      <div class="navbar-burger" data-target="navMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <body>
+        <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-centered" href="#"><strong class="is-size-3 has-text-centered">MLH
+                        Quizzet</strong></a>
+                <div class="navbar-burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        {% if uploaded == true %}
+        {% for i in range(size) %}
+        <section class="section-1" id="section-1">
+            <main>
+<div class="scp-quizzes-main">
+    <div class="scp-quizzes-data">
+        <h3>{{ i+1 }}. {{ questions[i+1]['question'] }}</h3>
+        <br />
+        <form>
+        {% for j in questions[i+1]['options'] %}
+        {% if questions[i+1]['options'][j+1]  == questions[i+1]['answer'] %}
+        <input type="radio" id="{{ questions[i+1]['answer'] }}" name="question{{ i+1 }}">
+        <label for="{{ questions[i+1]['answer'] }}">{{ j }}. {{ questions[i+1]['options'][j+1] }}</label><br />
+        {% else %}
+        <input type="radio" name="question{{ i+1 }}">
+        <label>{{ j }}. {{ questions[i+1]['options'][j+1] }}</label><br />
+        {% endif %}
+        {% endfor %}
     </div>
-  </nav>
-  <a href="{{ url_for('index') }}"> Home </a>
-  {% if uploaded == true %}
-
-  {% for i in range(size) %}
-  <section class="section-1" id="section-1">
-    <main>
-      <p class="has-text-weight-bold has-text-black is-size-2">Question {{ i+1 }}</p>
-      <div class="text-container">
-        <p class="has-text-weight-bold has-text-black is-size-4">
-          {{ questions[i+1]['question'] }}
-        </p>
-      </div>
-      <form>
-        <div class="quiz-options">
-          {% for j in questions[i+1]['options'] %}
-          <input type="radio" class="input-radio one-a" id="one-a" name="yes-1" required />
-          <label class="radio-label" for="one-a">
-            <span class="alphabet">{{ j+1 }}</span> {{ questions[i+1]['options'][j+1] }}
-            <br />
-            {% endfor %}
-        </div>
-      </form>
+</div>
+    </form>
     </main>
-  </section>
-  {% endfor %}
-  {% else %}
-  <h1>Could not upload file</h1>
-  {% endif %}
-</body>
+    </section>
+{% endfor %}
+{% else %}
+<h1>Could not upload file</h1>
+{% endif %}
+
+
+    </body>
 
 </html>
