@@ -12,6 +12,9 @@ UPLOAD_FOLDER = './pdf/'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+# Global quiz object
+questions = dict()
+
 
 @ app.route('/')
 def index():
@@ -24,7 +27,6 @@ def quiz():
     """ Handle upload and conversion of file + other stuff """
 
     UPLOAD_STATUS = False
-    questions = dict()
 
     # Make directory to store uploaded files, if not exists
     if not os.path.isdir('./pdf'):
@@ -45,7 +47,6 @@ def quiz():
             # Get contents of file
             uploaded_content = pdf2text(file_path, file_exten)
             questions = txt2questions(uploaded_content)
-            print(questions)
 
             # File upload + convert success
             if uploaded_content is not None:
@@ -57,6 +58,14 @@ def quiz():
         uploaded=UPLOAD_STATUS,
         questions=questions,
         size=len(questions))
+
+
+@app.route('/result', methods=['POST', 'GET'])
+def result():
+    correct_q = 0
+    for k, v in request.form.items():
+        correct_q += 1
+    return render_template('result.html', total=5, correct=correct_q)
 
 
 if __name__ == "__main__":
