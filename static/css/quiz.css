@@ -92,3 +92,14 @@ input[type="radio"]:checked + label {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+
+.end {
+  margin: auto;
+}
+
+.button.is-fullwidth {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
