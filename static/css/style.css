@@ -16,9 +16,10 @@ body {
 
 .card {
   border-radius: 10px;
-  margin-top: 100px !important;
-  height: 400px !important;
-  width: 300px;
+  margin-top: 50px !important;
+  height: 350px !important;
+  width: 250px;
+  margin: auto;
 }
 
 .card.has-text-centered .card-header,
@@ -165,4 +166,8 @@ body {
   100% {
     transform: scale(1);
   }
+}
+
+.hero {
+  margin-top: 70px !important;
 }
