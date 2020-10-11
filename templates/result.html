@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/results.css') }}" />
+    <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4"
+        type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <script src="https://kit.fontawesome.com/22be60108b.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>MLH Quizzet</title>
+</head>
+
+<body>
+    <style type="text/css">
+        @font-face {
+            font-family: helvetica;
+            src: "{{ url_for('static', filename='fonts/helvetica.ttf')}}"
+        }
+    </style>
+    <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" height="32" width="64"
+                style="margin: 10px">
+            <a class="navbar-item has-text-centered" href="{{ url_for('index') }}"><strong
+                    class="is-size-3 has-text-centered">MLH Quizzet</strong></a>
+            <a class="github-fork-ribbon" href="https://github.com/PragatiVerma18/Fantastic-Falcons-1.0"
+                data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+            <div class="navbar-burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </nav>
+        <section class="section-1" id="section-1">
+            <main>
+            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_0ge4xP.json" background="transparent" speed="1"
+                style="width: 240px; height: 240px; margin: auto !important;" loop  autoplay></lottie-player>
+            <h1 class="has-text-centered is-size-3 has-text-weight-bold"> You got {{ correct }}/{{ total }} right!</h1>
+            <a class="button is-dark has-text-centered has-text-weight-bold is-rounded is-fullwidth" href="{{ url_for('index') }}"> Upload another document</a>
+            </main>
+            </section>
+
+
+        <div class="has-text-white has-text-centered" style="margin-top: 40px; background-color: #363636; padding: 10px;">
+            MIT License © Copyright 2020 Fantastic Falcons
+        </div>
+</body>
+
+</html>

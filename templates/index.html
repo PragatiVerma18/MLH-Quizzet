@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}" />
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" type="image/x-icon">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <script src="https://kit.fontawesome.com/22be60108b.js" crossorigin="anonymous"></script>
+  <title>MLH Quizzet</title>
+</head>
+
+<body>
+  <style type="text/css">
+    @font-face {
+      font-family: helvetica;
+      src: "{{ url_for('static', filename='fonts/helvetica.ttf')}}"
+    }
+  </style>
+  <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <img src="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" height="32" width="64"
+        style="margin: 10px">
+      <a class="navbar-item has-text-centered" href="{{ url_for('index') }}"><strong
+          class="is-size-3 has-text-centered">MLH Quizzet</strong></a>
+      <a class="github-fork-ribbon" href="https://github.com/PragatiVerma18/Fantastic-Falcons-1.0"
+        data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+      <div class="navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <main role="main">
+          <div class="hero">
+            <p class="is-size-3 has-text-black has-text-weight-bold has-text-centered">Upload any Document to get an instant Quiz</p>
+            <p class="is-size-4 has-text-weight-bold has-text-centered">You Know 📖, You Grow 🚀</p>
+            <p class="is-size-5 has-text-black has-text-weight-medium has-text-centered"> Practice More • Learn More </p>
+          </div>
+      <div class="card has-text-centered">
+        <img src="https://cdn4.iconfinder.com/data/icons/files-and-folders-thinline-icons-set/144/File_PDF-512.png"
+          alt="upload"/>
+        <form action="http://localhost:5000/quiz" method="POST" enctype="multipart/form-data">
+          <div id="file-js-example" class="file has-name is-fullwidth">
+            <label class="file-label">
+              <input class="file-input" type="file" name="file" accept=".txt, application/pdf" />
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label"> Choose a file… </span>
+              </span>
+            <span class="file-name"> No file uploaded </span>
+          </label>
+        </div>
+        <script>
+          const fileInput = document.querySelector(
+            "#file-js-example input[type=file]"
+          );
+          fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+              const fileName = document.querySelector(
+                "#file-js-example .file-name"
+              );
+              fileName.textContent = fileInput.files[0].name;
+            }
+          };
+        </script>
+        <button class="button has-text-centered is-large is-fullwidth is-dark">
+          <span class="submit has-text-centered" type="submit" name="upload file">Submit</span>
+          <span class="loading"><i class="fa fa-refresh"></i></span>
+          <span class="check"><i class="fa fa-check"></i></span>
+        </button>
+      </form>
+    </div>
+  </main>
+  <script>const button = document.querySelector('.button');
+    const submit = document.querySelector('.submit');
+
+    function toggleClass() {
+      this.classList.toggle('active');
+    }
+
+    function addClass() {
+      this.classList.add('finished');
+    }
+
+    button.addEventListener('click', toggleClass);
+    button.addEventListener('transitionend', toggleClass);
+    button.addEventListener('transitionend', addClass);
+  </script>
+</body>
+
+</html>
