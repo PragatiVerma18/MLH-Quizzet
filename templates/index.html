@@ -6,11 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}" />
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" type="image/x-icon">
   <script src="https://kit.fontawesome.com/22be60108b.js" crossorigin="anonymous"></script>
   <title>MLH Quizzet</title>
 </head>
 
 <body>
+  <style type="text/css">
+    @font-face {
+      font-family: helvetica;
+      src:
+          "{{ url_for('static', filename='fonts/helvetica.ttf')}}"
+    }
+  </style>
   <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
     <div class="navbar-brand"><img src="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" height="32"
         width="64" style="margin: 10px">

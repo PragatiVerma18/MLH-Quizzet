@@ -24,7 +24,7 @@ def pdf2text(file_path: str, file_exten: str) -> str:
     return _content
 
 
-def txt2questions(doc: str, n=1, o=4) -> dict:
+def txt2questions(doc: str, n=5, o=4) -> dict:
     """ Get all questions and options """
 
     qGen = QuestionGeneration(n, o)
