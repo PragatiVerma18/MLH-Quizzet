@@ -19,6 +19,9 @@ This is a smart Quiz Generator that generates a dynamic quiz from any uploaded t
 - enables the **enrichment of the teaching** process, adapt learning to student knowledge and needs, as well as drill and practice exercises
 - presents an _automatic mechanism_ to assemble exams or to adaptively select questions from a question bank
 
+## WorkFlow
+![workflow](https://user-images.githubusercontent.com/42115530/95686207-1111e300-0c1a-11eb-993a-766967b91c92.png)
+
 ## Technology Stack:
 
 
