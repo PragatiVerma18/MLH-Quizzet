@@ -35,7 +35,9 @@ def quiz():
             # Retrieve file from request
             uploaded_file = request.files['file']
             file_path = os.path.join(
-                app.config['UPLOAD_FOLDER'], secure_filename(uploaded_file.filename))
+                app.config['UPLOAD_FOLDER'],
+                secure_filename(
+                    uploaded_file.filename))
             file_exten = uploaded_file.filename.rsplit('.', 1)[1].lower()
 
             # Save uploaded file
@@ -50,7 +52,11 @@ def quiz():
                 UPLOAD_STATUS = True
         except Exception as e:
             print(e)
-    return render_template('quiz.html', uploaded=UPLOAD_STATUS, questions=questions, size=len(questions))
+    return render_template(
+        'quiz.html',
+        uploaded=UPLOAD_STATUS,
+        questions=questions,
+        size=len(questions))
 
 
 if __name__ == "__main__":

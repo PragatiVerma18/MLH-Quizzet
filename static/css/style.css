@@ -13,6 +13,7 @@ body {
   font-family: "helvetica", sans-serif !important;
   overflow-x: hidden !important;
 }
+
 .card {
   border-radius: 10px;
   margin-top: 100px !important;
@@ -26,6 +27,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .card.has-text-centered h1 {
   font-size: 1.75rem;
   font-weight: bold;
@@ -34,9 +36,11 @@ body {
 .navbar {
   margin-bottom: 20px !important;
 }
+
 .hide {
   display: none;
 }
+
 .button {
   position: relative;
   display: flex;
@@ -55,6 +59,7 @@ body {
   overflow: hidden;
   font-family: "Open Sans", sans-serif !important;
 }
+
 .button:before {
   position: absolute;
   content: "";
@@ -64,68 +69,86 @@ body {
   height: 100%;
   background-color: #54d98c;
 }
+
 .button span {
   position: absolute;
   line-height: 0;
 }
+
 .button span i {
   transform-origin: center center;
 }
+
 .button span:nth-of-type(1) {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .button span:nth-of-type(2) {
   top: 100%;
   transform: translateY(0%);
   font-size: 24px;
 }
+
 .button span:nth-of-type(3) {
   display: none;
 }
+
 .active {
   background-color: #2ecc71;
 }
+
 .active:before {
   width: 100%;
   transition: width 30s linear !important;
 }
+
 .active span:nth-of-type(1) {
   top: -100%;
   transform: translateY(-50%);
 }
+
 .active span:nth-of-type(2) {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .active span:nth-of-type(2) i {
   animation: loading 10000ms linear infinite !important;
 }
+
 .active span:nth-of-type(3) {
   display: none;
 }
+
 .finished {
   background-color: #54d98c;
 }
+
 .finished .submit {
   display: none;
 }
+
 .finished .loading {
   display: none;
 }
+
 .finished .check {
   display: block !important;
   font-size: 24px;
   animation: scale 0.5s linear;
 }
+
 .finished .check i {
   transform-origin: center center;
 }
+
 @keyframes loading {
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes scale {
   0% {
     transform: scale(10);

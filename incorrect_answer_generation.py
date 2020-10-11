@@ -9,6 +9,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 import random
 import numpy as np
 
+
 class IncorrectAnswerGenerator:
     ''' This class contains the methods
     for generating the incorrect answers
@@ -35,14 +36,14 @@ class IncorrectAnswerGenerator:
             for i in range(1, num_options + 1):
                 options_dict[i] = similar_words[i - 1][0]
 
-        except:
+        except BaseException:
             self.all_sim = []
             for word in self.all_words:
                 if word not in answer:
                     try:
                         self.all_sim.append(
                             (self.model.similarity(answer, word), word))
-                    except:
+                    except BaseException:
                         self.all_sim.append(
                             (0.0, word))
                 else:
@@ -50,8 +51,8 @@ class IncorrectAnswerGenerator:
 
             self.all_sim.sort(reverse=True)
 
-            for i in range(1, num_options+1):
-                options_dict[i] = self.all_sim[i-1][1]
+            for i in range(1, num_options + 1):
+                options_dict[i] = self.all_sim[i - 1][1]
 
         replacement_idx = random.randint(1, num_options)
 
