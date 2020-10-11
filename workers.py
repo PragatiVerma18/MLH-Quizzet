@@ -2,7 +2,7 @@ from PyPDF2 import PdfFileReader
 from question_generation_main import QuestionGeneration
 
 
-def pdf2text(file_path, file_exten) -> str:
+def pdf2text(file_path: str, file_exten: str) -> str:
     """ Converts a given file to text content """
 
     _content = ''
@@ -11,9 +11,9 @@ def pdf2text(file_path, file_exten) -> str:
     if file_exten == 'pdf':
         with open(file_path, 'rb') as pdf_file:
             _pdf_reader = PdfFileReader(pdf_file)
-            # for p in range(_pdf_reader.numPages):
-            #     _content += _pdf_reader.getPage(p).extractText()
-            _content = _pdf_reader.getPage(0).extractText()
+            for p in range(_pdf_reader.numPages):
+                _content += _pdf_reader.getPage(p).extractText()
+            # _content = _pdf_reader.getPage(0).extractText()
             print('PDF operation done!')
 
     elif file_exten == 'txt':
@@ -24,8 +24,15 @@ def pdf2text(file_path, file_exten) -> str:
     return _content
 
 
-def txt2questions(doc, n=1, o=4):
+def txt2questions(doc: str, n=1, o=4) -> dict:
     """ Get all questions and options """
 
     qGen = QuestionGeneration(n, o)
-    return qGen.generate_questions_dict(doc)
+    q = qGen.generate_questions_dict(doc)
+    for i in range(len(q)):
+        temp = []
+        for j in range(len(q[i+1]['options'])):
+            temp.append(q[i+1]['options'][j+1])
+        # print(temp)
+        q[i+1]['options'] = temp
+    return q

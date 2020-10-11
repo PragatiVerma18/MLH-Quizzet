@@ -24,6 +24,7 @@ def quiz():
     """ Handle upload and conversion of file + other stuff """
 
     UPLOAD_STATUS = False
+    questions = dict()
 
     # Make directory to store uploaded files, if not exists
     if not os.path.isdir('./pdf'):
@@ -36,13 +37,13 @@ def quiz():
             file_path = os.path.join(
                 app.config['UPLOAD_FOLDER'], secure_filename(uploaded_file.filename))
             file_exten = uploaded_file.filename.rsplit('.', 1)[1].lower()
-            questions = ''
 
             # Save uploaded file
             uploaded_file.save(file_path)
             # Get contents of file
             uploaded_content = pdf2text(file_path, file_exten)
             questions = txt2questions(uploaded_content)
+            print(questions)
 
             # File upload + convert success
             if uploaded_content is not None:
