@@ -43,63 +43,15 @@ main {
   color: #000000;
   background: #ffffff;
   border-radius: 10px;
-  padding: 50px 40px 50px;
+  padding: 30px 40px 30px;
   width: 95%;
   max-width: 590px;
   margin: auto;
 }
 
-.text-container {
-  text-align: center;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-input[type="radio"] + label {
-  display: inline-block;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-input[type="radio"] + label:hover {
-  border: 1px solid #000000;
-}
-
-input[type="radio"]:checked + label {
-  background-image: none;
-  background-color: #0c0;
-  color: #fff;
-  border: 1px solid #0c0 !important;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.worngans {
-  background-color: #f36;
-  color: #fff;
-  border: 1px solid #f36 !important;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.end {
-  margin: auto;
-}
-
 .button.is-fullwidth {
   display: flex;
-  width: 50%;
+  width: 90%;
   margin: auto;
   margin-top: 30px;
 }
