@@ -12,9 +12,6 @@ UPLOAD_FOLDER = './pdf/'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Global quiz object
-questions = dict()
-
 
 @ app.route('/')
 def index():
@@ -27,6 +24,7 @@ def quiz():
     """ Handle upload and conversion of file + other stuff """
 
     UPLOAD_STATUS = False
+    questions = dict()
 
     # Make directory to store uploaded files, if not exists
     if not os.path.isdir('./pdf'):

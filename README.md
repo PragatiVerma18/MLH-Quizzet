@@ -22,6 +22,12 @@ This is a smart Quiz Generator that generates a dynamic quiz from any uploaded t
 ## WorkFlow
 ![workflow](https://user-images.githubusercontent.com/42115530/95686207-1111e300-0c1a-11eb-993a-766967b91c92.png)
 
+## Demo Video
+<a href="https://youtu.be/74RrpcO89E0" target="_blank" rel="noopener">
+  <img src="https://user-images.githubusercontent.com/42115530/95742312-6c40e580-0cad-11eb-89a5-c2ee099bf8d7.png" alt="MLH-Quizzet"
+	title="MLH-Quizzet" width="400px" />
+</a>
+
 ## Technology Stack:
 
 
