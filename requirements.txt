@@ -35,5 +35,5 @@ threadpoolctl==2.1.0
 tqdm==4.50.2
 urllib3==1.25.10
 wasabi==0.8.0
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 zipp==3.3.0
