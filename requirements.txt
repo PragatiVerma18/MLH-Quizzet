@@ -6,7 +6,7 @@ click==7.1.2
 cymem==2.0.3
 en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.3.1/en_core_web_md-2.3.1.tar.gz
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz
-Flask==1.1.2
+Flask==2.3.2
 gensim==3.8.3
 idna==2.10
 importlib-metadata==2.0.0
