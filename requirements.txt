@@ -15,7 +15,7 @@ Jinja2==2.11.2
 joblib==0.17.0
 MarkupSafe==1.1.1
 murmurhash==1.0.2
-nltk==3.5
+nltk==3.6.6
 numpy==1.19.2
 pkg-resources==0.0.0
 plac==1.1.3
