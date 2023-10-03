@@ -33,7 +33,7 @@ srsly==1.0.2
 thinc==7.4.1
 threadpoolctl==2.1.0
 tqdm==4.50.2
-urllib3==1.25.10
+urllib3==1.26.17
 wasabi==0.8.0
 Werkzeug==1.0.1
 zipp==3.3.0
