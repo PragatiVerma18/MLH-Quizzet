@@ -23,7 +23,7 @@ preshed==3.0.2
 PyPDF2==1.26.0
 regex==2020.9.27
 requests==2.24.0
-scikit-learn==0.23.2
+scikit-learn==1.0.1
 scipy==1.5.2
 six==1.15.0
 sklearn==0.0
